@@ -2,7 +2,8 @@
 		<div class="container">
 			<span class="navbar-text navbar-left" style="margin-left: 0;">&copy; 2014 Diamondback Beer &middot; Dev: <a href="http://burlingtoncollective.com" target="_blank">Burlington Collective</a></span>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="contact.html" data-toggle="modal" data-target="#contact-modal"><i class="social facebook"></i></a></li>
+				<li><a href="https://www.facebook.com/diamondbackbrewing" target="_blank"><i class="social facebook"></i></a></li>
+				<li><a href="http://instagram.com/diamondbackbrew" target="_blank"><i class="social instagram"></i></a></li>
 			</ul>
 		</div>
 	</footer>
