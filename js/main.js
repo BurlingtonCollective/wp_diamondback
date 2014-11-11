@@ -1,7 +1,6 @@
 $(function(){
 
-	function getUrlParameter(sParam)
-	{
+	function getUrlParameter(sParam){
 		var sPageURL = window.location.search.substring(1);
 		var sURLVariables = sPageURL.split('&');
 		for (var i = 0; i < sURLVariables.length; i++) 
@@ -49,6 +48,25 @@ $(function(){
 			'wp-content/themes/wp_diamondback/images/stock/under-dock.jpg'
 		], {fade: 500});
 
+	}
+
+	var $eventPanels = $('.event-panel');
+
+	if($eventPanels.length > 0){
+		console.log('panels detected');
+		var maxHeight = 0;
+
+			$.each($eventPanels, function(){
+				console.log('looping panels');
+				var bodyHeight = $(this).find('.panel-body').height();
+				maxHeight = Math.max(maxHeight, bodyHeight);
+			});
+
+			$eventPanels.find('.panel-body').height(maxHeight);
+		$('#event-callouts').load(function(){
+			console.log('load fn ran');
+			
+		});
 	}
 
 });
