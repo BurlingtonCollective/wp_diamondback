@@ -55,7 +55,7 @@ get_header();
 					<ul class="address">
 						<li>5600 Pennington Avenue</li>
 						<li>Baltimore, MD 21226</li>
-						<li><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Get Directions</a></li>
+						<li><a target="_blank" href="https://goo.gl/maps/5qjrt"><i class="glyphicon glyphicon-map-marker"></i> Get Directions</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-6">
@@ -77,11 +77,26 @@ get_header();
 				<ul class="media-list">
 					<li class="media">
 						<a class="pull-left" href="#">
-							<img class="media-object" src="images/drafts/bar-scene-thumb.png">
+							<div class="media-object">
+								<i class="glyphicon glyphicon-comment"></i>
+							</div>
+							<!-- <img class="media-object" src="images/drafts/bar-scene-thumb.png"> -->
 						</a>
 						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+							<h4 class="media-heading">10/01/14</h4>
+							<p>Attention all Baltimoreans, Loyola Blakefield and Calvert Hall Alumni, Diamondback Beer fans, and general Turkey Bowl enthusiasts- Sour Hour III sponsored by Diamondback Beer will be back in action early Thanksgiving morning, November 27th, 2014. Spread the word, tell your friends and family and get ready for the return of a Baltimore tradition! Details to follow in the coming weeks!</p>
+						</div>
+					</li>
+					<li class="media">
+						<a class="pull-left" href="#">
+							<div class="media-object">
+								<i class="glyphicon glyphicon-comment"></i>
+							</div>
+							<!-- <img class="media-object" src="images/drafts/bar-scene-thumb.png"> -->
+						</a>
+						<div class="media-body">
+							<h4 class="media-heading">9/25/14</h4>
+							<p>Big shout out to our partner eastern shore brewing for signing multiple contracts as they break into the DC market. We are excited to start brewing with ESB beginning mid-October and hope you are as well!</p>
 						</div>
 					</li>
 					<li class="media">
@@ -92,17 +107,8 @@ get_header();
 							<!-- <img class="media-object" src="http://placehold.it/64x64"> -->
 						</a>
 						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</div>
-					</li>
-					<li class="media">
-						<a class="pull-left" href="#">
-							<img class="media-object" src="images/drafts/bar-scene-thumb.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+							<h4 class="media-heading">9/24/14</h4>
+							<p>Applications to the state and feds have been submitted, kegs have been ordered, more apparel is on the way and Diamondback Beer is excited to announce that production will begin mid-October and the 3:30 amber ale will hit the market in November. Keep your eyes and ears posted for more updates!</p>
 						</div>
 					</li>
 				</ul>
@@ -113,34 +119,32 @@ get_header();
 				</div>
 				<ul class="media-list">
 					<li class="media">
-						<a class="pull-left" href="#">
-							<img class="media-object" src="images/drafts/bar-scene-thumb.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</div>
-					</li>
-					<li class="media">
-						<a class="pull-left" href="#">
-							<div class="media-object">
-								<i class="glyphicon glyphicon-map-marker"></i>
-							</div>
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</div>
-					</li>
-					<li class="media">
-						<a class="pull-left" href="#">
-							<img class="media-object" src="images/drafts/bar-scene-thumb.png">
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">Media heading</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</div>
-					</li>
+				    <a class="pull-left" href="#">
+				      <img class="media-object" src="<?= get_template_directory_uri(); ?>/images/events/rhg.jpg">
+				    </a>
+				    <div class="media-body">
+				      <h4 class="media-heading">Sour Hour III &middot; 11/27/14</h4>
+				      <p>Diamondback Beer will be sponsoring a Thanksgiving morning event at The Rowhouse Grille in Federal Hill.  $15 gets you an all-you-can-eat breakfast buffet and bottomless Diamondback Beer until 10am.  Contact us at <a href="mailto:info@diamondbackbeer.com">info@diamondbackbeer.com</a> for further information.</p>
+				    </div>
+				  </li>
+				  <li class="media">
+				    <a class="pull-left" href="#">
+				      <img class="media-object" src="<?= get_template_directory_uri(); ?>/images/events/brewers-cask.jpg">
+				    </a>
+				    <div class="media-body">
+				      <h4 class="media-heading">Promotional Night &middot; TBD</h4>
+				      <p>Diamondback Beer will host a promo night at The Brewer's Cask in Federal Hill.  Stop by and try our 3:30 Amber Ale as well as chat with the owners and brewers!  Date is TBD, so check back soon for more information.</p>
+				    </div>
+				  </li>
+				  <li class="media">
+				    <a class="pull-left" href="#">
+				      <img class="media-object" src="<?= get_template_directory_uri(); ?>/images/events/diamondback.jpg">
+				    </a>
+				    <div class="media-body">
+				      <h4 class="media-heading">Promotional Night &middot; TBD</h4>
+				      <p>Check back for more information on our upcoming promo nights.</p>
+				    </div>
+				  </li>
 				</ul>
 			</div>
 		</div>

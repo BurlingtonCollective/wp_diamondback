@@ -65,7 +65,7 @@ get_header();
 				<ul class="address">
 					<li>5600 Pennington Avenue</li>
 					<li>Baltimore, MD 21226</li>
-					<li><a href="#"><i class="glyphicon glyphicon-map-marker"></i> Get Directions</a></li>
+					<li><a target="_blank" href="https://goo.gl/maps/5qjrt"><i class="glyphicon glyphicon-map-marker"></i> Get Directions</a></li>
 				</ul>
 				<a href="tel:1-443-827-8385" class="contact-links"><i class="glyphicon glyphicon-phone"></i> &nbsp;(443) 827-8385</a>
 				<a href="mailto:info@diamondbackbeer.com" class="contact-links"><i class="glyphicon glyphicon-envelope"></i> &nbsp;info@diamondbackbeer.com</a>
