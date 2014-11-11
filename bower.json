@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.0",
-    "jquery-backstretch": "~2.0.4"
+    "jquery-backstretch": "~2.0.4",
+    "imagesloaded": "~3.1.8"
   }
 }

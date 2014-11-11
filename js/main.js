@@ -51,21 +51,18 @@ $(function(){
 	}
 
 	var $eventPanels = $('.event-panel');
-
+	
 	if($eventPanels.length > 0){
-		console.log('panels detected');
-		var maxHeight = 0;
+		
+		$('#event-callouts').imagesLoaded(function(){
+			var maxHeight = 0;
 
 			$.each($eventPanels, function(){
-				console.log('looping panels');
 				var bodyHeight = $(this).find('.panel-body').height();
 				maxHeight = Math.max(maxHeight, bodyHeight);
 			});
 
-			$eventPanels.find('.panel-body').height(maxHeight);
-		$('#event-callouts').load(function(){
-			console.log('load fn ran');
-			
+			$eventPanels.find('.panel-body').height(maxHeight);	
 		});
 	}
 
