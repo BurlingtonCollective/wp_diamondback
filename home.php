@@ -18,9 +18,9 @@ get_header();
 			</div>
 			<div class="collapse navbar-collapse" id="hero-nav">
 				<ul class="nav navbar-nav">
-					<li><a href="/temp_dev/our-drafts/">Our Drafts</a></li>
-					<li><a href="/temp_dev/upcoming-events/">Upcoming Events</a></li>
-					<li><a href="/temp_dev/about-us/">About Us</a></li>
+					<li><a href="/our-drafts/">Our Drafts</a></li>
+					<li><a href="/upcoming-events/">Upcoming Events</a></li>
+					<li><a href="/about-us/">About Us</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
 				</ul>
 			</div>
