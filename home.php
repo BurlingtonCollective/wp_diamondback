@@ -32,7 +32,7 @@ get_header();
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="page-header">
-					<h1>Diamondback Brewing Company</h1>
+					<h1>Diamondback Beer</h1>
 				</div>
 			</div>
 		</div>
