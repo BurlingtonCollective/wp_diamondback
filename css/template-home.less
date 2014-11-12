@@ -53,12 +53,14 @@ section#home-hero{
 		border-radius: 0;
 		height: auto;
 		ul.navbar-nav{
-			font-size: 1.4em;
-			width: 100%;
-			& > li{
-				width: 25%;
-				a{
-					// text-transform: uppercase;
+			@media(min-width: @grid-float-breakpoint){
+				font-size: 1.4em;
+				width: 100%;
+				& > li{
+					width: 25%;
+					a{
+						// text-transform: uppercase;
+					}
 				}
 			}
 		}

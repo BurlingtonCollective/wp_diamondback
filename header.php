@@ -16,15 +16,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/wordpress/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
+					<a class="navbar-brand" href="/temp_dev/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
 				</div>
 				<div class="collapse navbar-collapse" id="top-nav">
 					<ul class="nav navbar-nav navbar-left">
-						<li><a href="/wordpress/our-drafts/">Our Drafts</a></li>
-						<li><a href="/wordpress/upcoming-events/">Upcoming Events</a></li>
+						<li><a href="/temp_dev/our-drafts/">Our Drafts</a></li>
+						<li><a href="/temp_dev/upcoming-events/">Upcoming Events</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/wordpress/about-us/">About Us</a></li>
+						<li><a href="/temp_dev/about-us/">About Us</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
 					</ul>
 				</div>

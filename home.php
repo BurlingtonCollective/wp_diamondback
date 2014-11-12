@@ -18,9 +18,9 @@ get_header();
 			</div>
 			<div class="collapse navbar-collapse" id="hero-nav">
 				<ul class="nav navbar-nav">
-					<li><a href="/wordpress/our-drafts/">Our Drafts</a></li>
-					<li><a href="/wordpress/upcoming-events/">Upcoming Events</a></li>
-					<li><a href="/wordpress/about-us/">About Us</a></li>
+					<li><a href="/temp_dev/our-drafts/">Our Drafts</a></li>
+					<li><a href="/temp_dev/upcoming-events/">Upcoming Events</a></li>
+					<li><a href="/temp_dev/about-us/">About Us</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
 				</ul>
 			</div>
@@ -41,7 +41,7 @@ get_header();
 				<div class="image-wrapper">
 					<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/drafts/growler-cropped.png">
 				</div>
-				<a href="drafts.html" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
+				<a href="/temp_dev/our-drafts" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
 			</div>
 			<div class="col-xs-6">
 				<p class="lead">Diamondback Beer brewed its inaugural batch on November 6, 2014. In the coming weeks, we will be organizing a series of launch events to promote our 3:30 Amber Ale.</p>
@@ -115,7 +115,7 @@ get_header();
 			</div>
 			<div class="col-xs-6">
 				<div class="page-header">
-					<h2>Upcoming Events <a href="events.html" class="btn btn-default pull-right">See all events</a></h2>
+					<h2>Upcoming Events <a href="/temp_dev/upcoming-events" class="btn btn-default pull-right">See all events</a></h2>
 				</div>
 				<ul class="media-list">
 					<li class="media">

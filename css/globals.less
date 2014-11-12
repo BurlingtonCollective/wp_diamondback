@@ -46,6 +46,18 @@ html{
 	}
 }
 
+.navbar-default{
+	.navbar-toggle{
+		border-color: @yellow-highlight;
+		.icon-bar{
+			background-color: @yellow-highlight;
+		}
+		&:focus, &:hover{
+			background-color: @melon;
+		}
+	}
+}
+
 header{
 	nav.navbar{
 		& > .container a.navbar-brand{
