@@ -18,6 +18,7 @@
 					<div class="modal-body">
 						<input type="hidden" name="my_email" value="znlincoln@gmail.com">
 						<input type="hidden" name="subject" value="%%name%% via diamondbackbeer.com">
+						<input type="hidden" name="thankyou_url" value="<?= $_SERVER['PHP_SELF']; ?>">
 						<div class="form-group">
 							<label>Your Name</label>
 							<input type="text" name="name" class="form-control" placeholder="John Smith">
