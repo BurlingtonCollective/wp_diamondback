@@ -51,19 +51,23 @@ $(function(){
 	}
 
 	var $eventPanels = $('.event-panel');
-	
+
 	if($eventPanels.length > 0){
-		
-		$('#event-callouts').imagesLoaded(function(){
+
+		function setEventPanelHeight(){
 			var maxHeight = 0;
 
 			$.each($eventPanels, function(){
-				var bodyHeight = $(this).find('.panel-body').height();
-				maxHeight = Math.max(maxHeight, bodyHeight);
+				var $panelBody = $(this).find('.panel-body');
+				$panelBody.css('height', 'auto');
+				maxHeight = Math.max(maxHeight, $panelBody.height());
 			});
 
 			$eventPanels.find('.panel-body').height(maxHeight);	
-		});
+		}
+		
+		$('#event-callouts').imagesLoaded(setEventPanelHeight);
+		$(window).resize(setEventPanelHeight);
 	}
 
 });

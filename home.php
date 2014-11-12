@@ -37,13 +37,13 @@ get_header();
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<div class="image-wrapper">
 					<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/drafts/growler-cropped.png">
 				</div>
-				<a href="/temp_dev/our-drafts" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
+				<a href="/our-drafts" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<p class="lead">Diamondback Beer brewed its inaugural batch on November 6, 2014. In the coming weeks, we will be organizing a series of launch events to promote our 3:30 Amber Ale.</p>
 				<p> We hope to be on tap by Thanksgiving in bars and restaurants around the Baltimore area. Please check out our "Upcoming Events" page to learn more about our launch, and where to get a taste of our beer.</p>
 				<p>The 3:30 Amber Ale will be available on draft and for Growler fills at select liquor stores.</p>
@@ -51,14 +51,14 @@ get_header();
 					<h4 id="location-heading">Location &amp; Contact</h4>
 				</div>
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col-xs-12 col-sm-6">
 					<ul class="address">
 						<li>5600 Pennington Avenue</li>
 						<li>Baltimore, MD 21226</li>
 						<li><a target="_blank" href="https://goo.gl/maps/5qjrt"><i class="glyphicon glyphicon-map-marker"></i> Get Directions</a></li>
 					</ul>
 				</div>
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-sm-6">
 					<a href="tel:1-443-827-8385" style="display:block;"><i class="glyphicon glyphicon-phone"></i> &nbsp;(443) 827-8385</a>
 					<a href="mailto:info@diamondbackbeer.com" style="display:block;"><i class="glyphicon glyphicon-envelope"></i> &nbsp;info@diamondbackbeer.com</a>
 				</div>
@@ -70,7 +70,7 @@ get_header();
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<div class="page-header">
 					<h2>Latest News</h2>
 				</div>
@@ -113,9 +113,9 @@ get_header();
 					</li>
 				</ul>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-md-6">
 				<div class="page-header">
-					<h2>Upcoming Events <a href="/temp_dev/upcoming-events" class="btn btn-default pull-right">See all events</a></h2>
+					<h2>Upcoming Events <a href="/upcoming-events" class="btn btn-default pull-right">See all events</a></h2>
 				</div>
 				<ul class="media-list">
 					<li class="media">

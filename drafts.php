@@ -16,7 +16,7 @@ get_header();
 <section class="beer-detail">
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-5">
+			<div class="col-xs-12 col-sm-7 col-md-5">
 				<h2 style="margin-top: 0;">3:30 Amber Ale <small style="display:block;"></small></h2>
 				<p class="lead">Sometimes you just can't wait 'till 5</p>
 				<p>The 3:30 Amber Ale blends a unique selection of hearty malts with citrus hops to create a bold and unforgettable taste.  Our 3:30 Amber goes down smooth yet packs a kick of bold caramel flavors. </p>
@@ -35,8 +35,10 @@ get_header();
 					<li><strong>ABV:</strong> 5.0%</li>
 				</ul>
 			</div>
-			<div class="col-xs-6 col-xs-push-1">
-				<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/drafts/330-amber-crop.png">
+			<div class="col-xs-12 col-sm-5 col-md-6 col-md-push-1">
+				<div class="top-image-wrapper">
+					<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/drafts/330-amber-crop.png">
+				</div>
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="image-wrapper left">

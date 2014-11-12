@@ -101,6 +101,23 @@ footer{
 	background: transparent url(../images/footer-cropped.png) center bottom no-repeat;
 	padding-top: 267px;
 	background-size: contain;
+	.clearfix();
+	@media(max-width: @grid-float-breakpoint-max){
+		padding-top: 100px;
+		.navbar-left{
+			float: left;
+		}
+		ul.navbar-right{
+			float: right;
+			margin: 0;
+			li{
+				float:left;
+			}
+		}
+	}
+	@media(max-width: @screen-xs-max){
+		background-size: cover;
+	}
 }
 
 .media-object{
