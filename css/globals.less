@@ -43,6 +43,9 @@ html{
 		nav.navbar{
 			background-image: url(http://www.transparenttextures.com/patterns/dark-denim-3.png);
 		}
+		@media(max-width: @grid-float-breakpoint-max){
+			padding-top: 74px;
+		}
 	}
 }
 
@@ -61,15 +64,34 @@ html{
 header{
 	nav.navbar{
 		& > .container a.navbar-brand{
-			position: absolute;
-			top: 0px;
-			left: 50%;
-			margin-left: -75px;
-			max-width: 150px;
-			height: auto;
-			float: none;
-			padding: 0;
-			outline: none;
+			@media(min-width: @grid-float-breakpoint){
+				position: absolute;
+				top: 0px;
+				left: 50%;
+				margin-left: -75px;
+				max-width: 150px;
+				height: auto;
+				float: none;
+				padding: 0;
+				outline: none;
+			}
+		}
+		@media(max-width: @grid-float-breakpoint-max){
+			padding: 4px 0;
+			.navbar-text{
+				color: @beer-foam;
+				padding-left: 73.5px;
+			}
+			& > .container a.navbar-brand{
+				padding: 0;
+				margin-left: 7.5px;
+				img{
+					max-height: 100%;
+				}
+			}
+			.navbar-collapse{
+				margin-top: 4px;
+			}
 		}
 	}
 	#top-nav{
@@ -117,6 +139,11 @@ footer{
 	}
 	@media(max-width: @screen-xs-max){
 		background-size: cover;
+	}
+	@media(max-width: 550px){
+		ul.navbar-right{
+			float: left;
+		}
 	}
 }
 

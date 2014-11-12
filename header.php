@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Diamondback Brewing Co.</title>
+	<title>Diamondback Beer</title>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/master.css?<?= time ( void ); ?>">
 </head>
@@ -17,6 +17,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
+					<span class="navbar-text navbar-left visible-xs visible-sm">Diamondback Beer</span>
 				</div>
 				<div class="collapse navbar-collapse" id="top-nav">
 					<ul class="nav navbar-nav navbar-left">
