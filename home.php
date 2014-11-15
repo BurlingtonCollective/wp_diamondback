@@ -18,14 +18,40 @@ if (have_posts()) : while (have_posts()) : the_post();
 				</button>
 			</div>
 			<div class="collapse navbar-collapse" id="hero-nav">
-				<ul class="nav navbar-nav">
+				<?php
+		    	wp_nav_menu(array(
+		    		'menu' => 'nav_left',
+		    		'theme_location' => 'nav_left',
+		    		'depth' => 2,
+		    		'container' => 'div',
+		    		'container_class' => '',
+		    		'container_id' => 'home-nav-left',
+		    		'menu_class' => 'nav navbar-nav',
+		    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+		    		'walker' => new wp_bootstrap_navwalker()
+		    	));
+		    ?>
+		    <?php
+		    	wp_nav_menu(array(
+		    		'menu' => 'nav_right',
+		    		'theme_location' => 'nav_right',
+		    		'depth' => 2,
+		    		'container' => 'div',
+		    		'container_class' => '',
+		    		'container_id' => 'home-nav-right',
+		    		'menu_class' => 'nav navbar-nav',
+		    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+		    		'walker' => new wp_bootstrap_navwalker()
+		    	));
+		    ?>
+				<!-- <ul class="nav navbar-nav">
 					<li><a href="/our-drafts/">Our Drafts</a></li>
 					<li><a href="/upcoming-events/">Upcoming Events</a></li>
 				</ul>
 				<ul class="nav navbar-nav">
 					<li><a href="/about-us/">About Us</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-				</ul>
+				</ul> -->
 			</div>
 		</div>
 	</nav>
