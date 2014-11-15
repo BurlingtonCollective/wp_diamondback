@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Diamondback Beer</title>
+	<title><?php wp_title('&#124;','true','right'); ?><?php bloginfo('name'); ?></title>
 	<meta property='og:site_name' content='Diamondback Beer' />
 	<meta property='og:title' content='Diamondback Beer' />
 	<meta property='og:description' content='Diamondback Brewing Company was founded around a love and passion for craft beer. As longtime friends and Baltimore natives, we hope to bring the highest quality craft beer to the Maryland market. ...' />
@@ -27,14 +27,40 @@
 					<span class="navbar-text navbar-left visible-xs visible-sm">Diamondback Beer</span>
 				</div>
 				<div class="collapse navbar-collapse" id="top-nav">
-					<ul class="nav navbar-nav navbar-left">
+					<?php
+			    	wp_nav_menu(array(
+			    		'menu' => 'nav_left',
+			    		'theme_location' => 'nav_left',
+			    		'depth' => 2,
+			    		'container' => 'div',
+			    		'container_class' => '',
+			    		'container_id' => 'nav-left',
+			    		'menu_class' => 'nav navbar-nav navbar-left',
+			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			    		'walker' => new wp_bootstrap_navwalker()
+			    	));
+			    ?>
+			    <?php
+			    	wp_nav_menu(array(
+			    		'menu' => 'nav_right',
+			    		'theme_location' => 'nav_right',
+			    		'depth' => 2,
+			    		'container' => 'div',
+			    		'container_class' => '',
+			    		'container_id' => 'nav-right',
+			    		'menu_class' => 'nav navbar-nav navbar-right',
+			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			    		'walker' => new wp_bootstrap_navwalker()
+			    	));
+			    ?>
+					<!-- <ul class="nav navbar-nav navbar-left">
 						<li><a href="/our-drafts/">Our Drafts</a></li>
 						<li><a href="/upcoming-events/">Upcoming Events</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/about-us/">About Us</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-					</ul>
+					</ul> -->
 				</div>
 			</div>
 		</nav>
