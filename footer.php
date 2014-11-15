@@ -16,9 +16,9 @@
 						<h4 class="modal-title">Contact Us</h4>
 					</div>
 					<div class="modal-body">
-						<input type="hidden" name="my_email" value="znlincoln@gmail.com">
+						<input type="hidden" name="my_email" value="info@diamondbackbeer.com">
 						<input type="hidden" name="subject" value="%%name%% via diamondbackbeer.com">
-						<input type="hidden" name="thankyou_url" value="<?= $_SERVER['PHP_SELF']; ?>">
+						<input type="hidden" name="thankyou_url" value="<?= 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 						<div class="form-group">
 							<label>Your Name</label>
 							<input type="text" name="name" class="form-control" placeholder="John Smith">
@@ -34,7 +34,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="submit" name="submit" class="btn btn-primary">Send</button>
+						<button type="submit" class="btn btn-primary">Send</button>
 					</div>
 				</form>
 			</div>
