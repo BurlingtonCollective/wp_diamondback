@@ -70,4 +70,9 @@ $(function(){
 		$(window).resize(setEventPanelHeight);
 	}
 
+	$('[href="#contact-modal"]').on('click', function(e){
+		e.preventDefault();
+		$('#contact-modal').modal('toggle');
+	});
+
 });

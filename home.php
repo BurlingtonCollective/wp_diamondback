@@ -3,6 +3,7 @@
 Template Name: Home Page
 */
 get_header();
+if (have_posts()) : while (have_posts()) : the_post();
 ?>
 <section id="home-hero">
 	<img id="hero-logo" class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png">
@@ -43,12 +44,13 @@ get_header();
 				<div class="image-wrapper">
 					<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/drafts/growler-cropped.png">
 				</div>
-				<a href="/our-drafts" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
+				<a href="<?php echo get_page_link( get_page_by_title( 'Our Drafts' )->ID ); ?>" class="btn btn-primary btn-block btn-lg">View our exclusive draft</a>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<p class="lead">Diamondback Beer brewed its inaugural batch on November 6, 2014. In the coming weeks, we will be organizing a series of launch events to promote our 3:30 Amber Ale.</p>
+				<?php the_content(); ?>
+				<!-- <p class="lead">Diamondback Beer brewed its inaugural batch on November 6, 2014. In the coming weeks, we will be organizing a series of launch events to promote our 3:30 Amber Ale.</p>
 				<p> We hope to be on tap by Thanksgiving in bars and restaurants around the Baltimore area. Please check out our "Upcoming Events" page to learn more about our launch, and where to get a taste of our beer.</p>
-				<p>The 3:30 Amber Ale will be available on draft and for Growler fills at select liquor stores.</p>
+				<p>The 3:30 Amber Ale will be available on draft and for Growler fills at select liquor stores.</p> -->
 				<div class="page-header">
 					<h4 id="location-heading">Location &amp; Contact</h4>
 				</div>
@@ -155,5 +157,6 @@ get_header();
 	</div>
 </section>
 <?php
+endwhile; endif;
 get_footer();
 ?>

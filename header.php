@@ -23,7 +23,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="/"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
+					<a class="navbar-brand" href="<?= get_site_url(); ?>"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
 					<span class="navbar-text navbar-left visible-xs visible-sm">Diamondback Beer</span>
 				</div>
 				<div class="collapse navbar-collapse" id="top-nav">
