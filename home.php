@@ -73,14 +73,24 @@ if (have_posts()) : while (have_posts()) : the_post();
 		</div>
 	</div>
 </section>
+<?php
+endwhile; endif;
+?>
 <section>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
+				<?php
+				$newsQuery = new WP_Query(array('post_type'=>'news', 'posts_per_page'=>3, 'orderby'=>'meta_value', 'meta_key'=>'wpcf-date'));
+				if($newsQuery->have_posts()):
+				?>
 				<div class="page-header">
 					<h2>Latest News</h2>
 				</div>
 				<ul class="media-list">
+					<?php
+					while($newsQuery->have_posts()): $newsQuery->the_post();
+					?>
 					<li class="media">
 						<a class="pull-left" href="#">
 							<div class="media-object">
@@ -89,35 +99,19 @@ if (have_posts()) : while (have_posts()) : the_post();
 							<!-- <img class="media-object" src="images/drafts/bar-scene-thumb.png"> -->
 						</a>
 						<div class="media-body">
-							<h4 class="media-heading">10/01/14</h4>
-							<p>Attention all Baltimoreans, Loyola Blakefield and Calvert Hall Alumni, Diamondback Beer fans, and general Turkey Bowl enthusiasts- Sour Hour III sponsored by Diamondback Beer will be back in action early Thanksgiving morning, November 27th, 2014. Spread the word, tell your friends and family and get ready for the return of a Baltimore tradition! Details to follow in the coming weeks!</p>
-						</div>
-					</li>
-					<li class="media">
-						<a class="pull-left" href="#">
-							<div class="media-object">
-								<i class="glyphicon glyphicon-comment"></i>
+							<h4 class="media-heading"><?php the_title(); ?></h4>
+							<div class="wysiwyg-content">
+								<?php the_content(); ?>
 							</div>
-							<!-- <img class="media-object" src="images/drafts/bar-scene-thumb.png"> -->
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">9/25/14</h4>
-							<p>Big shout out to our partner eastern shore brewing for signing multiple contracts as they break into the DC market. We are excited to start brewing with ESB beginning mid-October and hope you are as well!</p>
 						</div>
 					</li>
-					<li class="media">
-						<a class="pull-left" href="#">
-							<div class="media-object">
-								<i class="glyphicon glyphicon-comment"></i>
-							</div>
-							<!-- <img class="media-object" src="http://placehold.it/64x64"> -->
-						</a>
-						<div class="media-body">
-							<h4 class="media-heading">9/24/14</h4>
-							<p>Applications to the state and feds have been submitted, kegs have been ordered, more apparel is on the way and Diamondback Beer is excited to announce that production will begin mid-October and the 3:30 amber ale will hit the market in November. Keep your eyes and ears posted for more updates!</p>
-						</div>
-					</li>
+					<?php
+					endwhile;
+					?>
 				</ul>
+				<?php
+				endif;
+				?>
 			</div>
 			<div class="col-xs-12 col-md-6">
 				<div class="page-header">
@@ -157,6 +151,5 @@ if (have_posts()) : while (have_posts()) : the_post();
 	</div>
 </section>
 <?php
-endwhile; endif;
 get_footer();
 ?>
