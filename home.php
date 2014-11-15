@@ -48,9 +48,6 @@ if (have_posts()) : while (have_posts()) : the_post();
 			</div>
 			<div class="col-xs-12 col-md-6">
 				<?php the_content(); ?>
-				<!-- <p class="lead">Diamondback Beer brewed its inaugural batch on November 6, 2014. In the coming weeks, we will be organizing a series of launch events to promote our 3:30 Amber Ale.</p>
-				<p> We hope to be on tap by Thanksgiving in bars and restaurants around the Baltimore area. Please check out our "Upcoming Events" page to learn more about our launch, and where to get a taste of our beer.</p>
-				<p>The 3:30 Amber Ale will be available on draft and for Growler fills at select liquor stores.</p> -->
 				<div class="page-header">
 					<h4 id="location-heading">Location &amp; Contact</h4>
 				</div>
@@ -91,12 +88,21 @@ endwhile; endif;
 					<?php
 					while($newsQuery->have_posts()): $newsQuery->the_post();
 					?>
-					<li class="media">
+					<li class="media clearfix">
 						<a class="pull-left" href="#">
-							<div class="media-object">
+							<?php
+				    	if(has_post_thumbnail()):
+				    	?>
+				    	<?php the_post_thumbnail('full', array('class'=>'media-object')); ?>
+				      <?php
+				      else:
+				      ?>
+				    	<div class="media-object">
 								<i class="glyphicon glyphicon-comment"></i>
 							</div>
-							<!-- <img class="media-object" src="images/drafts/bar-scene-thumb.png"> -->
+				    	<?php
+				    	endif;
+				    	?>
 						</a>
 						<div class="media-body">
 							<h4 class="media-heading"><?php the_title(); ?></h4>
@@ -119,7 +125,7 @@ endwhile; endif;
 				if($eventsQuery->have_posts()):
 				?>
 				<div class="page-header">
-					<h2>Upcoming Events <a href="/upcoming-events" class="btn btn-default pull-right">See all events</a></h2>
+					<h2>Upcoming Events <a href="<?php echo get_page_link( get_page_by_title( 'Upcoming Events' )->ID ); ?>" class="btn btn-default pull-right">See all events</a></h2>
 				</div>
 				<ul class="media-list">
 					<?php
@@ -131,12 +137,12 @@ endwhile; endif;
 				    	if(has_post_thumbnail()):
 				    	?>
 				    	<?php the_post_thumbnail('full', array('class'=>'media-object')); ?>
-				      <!-- <img class="media-object" src="<?= get_template_directory_uri(); ?>/images/events/rhg.jpg"> -->
 				      <?php
 				      else:
 				      ?>
-
-
+				    	<div class="media-object">
+				    		<i class="glyphicon glyphicon-map-marker"></i>
+				    	</div>
 				    	<?php
 				    	endif;
 				    	?>
