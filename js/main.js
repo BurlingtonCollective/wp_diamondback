@@ -23,7 +23,8 @@ $(function(){
 		$body.addClass('on-home');
 
 		$hero.css({
-			height: $(window).height() + 'px'
+			height: ($(window).height()) + 'px'
+			// height: ($(window).height() + 134) + 'px'
 		});
 		
 		$window.on('resize', function(){

@@ -44,14 +44,6 @@ if (have_posts()) : while (have_posts()) : the_post();
 		    		'walker' => new wp_bootstrap_navwalker()
 		    	));
 		    ?>
-				<!-- <ul class="nav navbar-nav">
-					<li><a href="/our-drafts/">Our Drafts</a></li>
-					<li><a href="/upcoming-events/">Upcoming Events</a></li>
-				</ul>
-				<ul class="nav navbar-nav">
-					<li><a href="/about-us/">About Us</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#contact-modal">Contact Us</a></li>
-				</ul> -->
 			</div>
 		</div>
 	</nav>
