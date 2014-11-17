@@ -43,8 +43,37 @@ html{
 		nav.navbar{
 			background-image: url(http://www.transparenttextures.com/patterns/dark-denim-3.png);
 		}
+		&:after{
+			opacity: 0;
+			height: 0;
+			width: 0;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			// z-index: -999;
+		}
 		@media(max-width: @grid-float-breakpoint-max){
 			padding-top: 74px;
+		}
+		@media(min-width: @screen-lg-min){
+			&:after{
+				content: attr(data-size) 'screen-lg';
+			}
+		}
+		@media(max-width: @screen-md-max){
+			&:after{
+				content: attr(data-size) 'screen-md';
+			}
+		}
+		@media(max-width: @screen-sm-max){
+			&:after{
+				content: attr(data-size) 'screen-sm';
+			}
+		}
+		@media(max-width: @screen-xs-max){
+			&:after{
+				content: attr(data-size) 'screen-xs';
+			}
 		}
 	}
 }

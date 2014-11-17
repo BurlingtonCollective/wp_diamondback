@@ -31,6 +31,7 @@ $(function(){
 			$hero.css({
 				height: $(window).height() + 'px'
 			});
+			setBackstretch();
 		});
 		$window.scroll(function(){
 			if(!$body.is('.transitional')){
@@ -43,11 +44,42 @@ $(function(){
 			}
 		});
 
-		$hero.backstretch([
-			'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg',
-			'wp-content/themes/wp_diamondback/images/stock/arial-island.jpg',
-			'wp-content/themes/wp_diamondback/images/stock/under-dock.jpg'
-		], {fade: 500});
+		var setBackstretch = function(){
+			var screenSize = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+			if($hero.data('backstretch')){
+				$.backstretch("destroy");
+			}
+			switch (screenSize){
+				case 'screen-lg':
+					$hero.backstretch([
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/arial-island.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/under-dock.jpg'
+					], {fade: 500});
+					break;
+				case 'screen-md':
+					$hero.backstretch([
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/arial-island.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/under-dock.jpg'
+					], {fade: 500});
+					break;
+				case 'screen-sm':
+					$hero.backstretch([
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg'
+					]);
+					break;
+				case 'screen-xs':
+					$hero.backstretch([
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg'
+					]);
+					break;
+				default:
+					break;
+			}
+		}
+
+		setBackstretch();
 
 	}
 
