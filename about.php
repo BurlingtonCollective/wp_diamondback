@@ -3,6 +3,7 @@
 Template Name: About Page
 */
 get_header();
+if (have_posts()) : while (have_posts()) : the_post();
 ?>
 <div class="container">
 	<div class="row">
@@ -25,8 +26,9 @@ get_header();
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<p>Longtime friends Tom, Francis, and Colin founded Diamondback Beer in 2013. From our first batch at the University of Maryland to our current production level, we have always strived to create unforgettable beer that everyone can enjoy. Our 3:30 Amber Ale embodies this mission, and offers bold and refreshing flavors for any time of the day. </p>
-				<p>As Baltimore natives, we know the dynamic local market offers a great home for our hand crafted ales. We are always looking to expand our reach and bring the 3:30 Amber Ale to our fans. Please contact us to learn more about distribution, pricing, and availability.</p>
+				<?php the_content(); ?>
+				<!-- <p>Longtime friends Tom, Francis, and Colin founded Diamondback Beer in 2013. From our first batch at the University of Maryland to our current production level, we have always strived to create unforgettable beer that everyone can enjoy. Our 3:30 Amber Ale embodies this mission, and offers bold and refreshing flavors for any time of the day. </p>
+				<p>As Baltimore natives, we know the dynamic local market offers a great home for our hand crafted ales. We are always looking to expand our reach and bring the 3:30 Amber Ale to our fans. Please contact us to learn more about distribution, pricing, and availability.</p> -->
 			</div>
 			<div class="col-xs-4 col-md-2">
 				<div class="panel panel-default">
@@ -80,5 +82,6 @@ get_header();
 	</div>
 </section>
 <?php
+endwhile; endif;
 get_footer();
 ?>
