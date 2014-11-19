@@ -4,7 +4,7 @@
 	<title><?php wp_title('&#124;','true','right'); ?><?php bloginfo('name'); ?></title>
 	<meta property='og:site_name' content='Diamondback Beer' />
 	<meta property='og:title' content='Diamondback Beer' />
-	<meta property='og:description' content='Diamondback Brewing Company was founded around a love and passion for craft beer. As longtime friends and Baltimore natives, we hope to bring the highest quality craft beer to the Maryland market. ...' />
+	<meta property='og:description' content='Diamondback Beer was founded around a love and passion for craft beer. As longtime friends and Baltimore natives, we hope to bring the highest quality craft beer to the Maryland market. ...' />
 	<meta property='og:image' content='http://diamondbackbeer.com/uploads/3/3/1/4/3314012/1392348668.png' />
 	<meta property='og:url' content='http://diamondbackbeer.com/' />
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
