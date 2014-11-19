@@ -4,6 +4,8 @@
 @link-color: @melon;
 @navbar-default-bg: @green;
 @navbar-default-link-color: @yellow-highlight;
+@navbar-default-link-active-color: @yellow-highlight;
+@navbar-default-link-active-bg: transparent;
 // @component-active-color: @beer-foam;
 
 @input-bg: lighten(@body-bg, 2%);
@@ -143,6 +145,17 @@ header{
 			}
 			.navbar-right{
 				padding-left: 100px;
+			}
+		}
+		@media(max-width: @grid-float-breakpoint-max){
+			.navbar-nav > li > a:hover{
+				color: @yellow-highlight;
+			}
+			.navbar-left{
+				margin-bottom: 0;
+			}
+			.navbar-right{
+				margin-top: 0;
 			}
 		}
 	}
