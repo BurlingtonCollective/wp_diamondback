@@ -211,11 +211,90 @@ footer{
 }
 
 .modal-backdrop{
-	// #gradient > .radial(@green, darken(@green, 80%));
 	#gradient > .radial(@beer-foam, darken(@beer-foam, 80%));
 	#gradient > .radial(@body-bg, darken(@body-bg, 80%));
-	// background: @green url(http://www.transparenttextures.com/patterns/dark-denim-3.png);
 	&.in{
 		.opacity(.5);
 	}
+}
+
+#av-overlay-wrap { 
+	position: fixed; 
+	height: 100%;
+	width: 100%;
+	background: transparent;
+	#gradient > .radial(fade(@beer-foam, 85%), fade(darken(@beer-foam, 80%), 85%));
+	#gradient > .radial(fade(@body-bg, 85%), fade(darken(@body-bg, 80%), 85%));
+	z-index: 10000;
+	display: block;
+	top: 0;
+	left: 0; 
+}
+
+#av-overlay {
+	position: fixed; 
+	top: 15px;
+	left: 15px;
+	width: ~'calc(100% - 30px)';
+	background: @beer-foam;
+	z-index: 10001;
+	padding: 30px 40px 34px;
+	-webkit-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	   -moz-box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+	        box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+}
+#av-overlay h1 {
+	.h1();
+	+ p {
+		.lead();
+	}
+}
+#av-overlay p {
+	.form-group();
+}
+#av-overlay .submit {
+	.form-group();
+
+	label {
+		.form-group();
+	}
+}
+
+#av-overlay input[type=text] {
+	.form-control();
+}
+
+#av-overlay input[type="submit"] {
+	.btn-primary();
+	.btn-block();
+}
+
+#av-overlay input[type="checkbox"] {
+	margin-right: 6px;
+}
+
+#av-overlay #av_verify_y {
+	width: 70px;
+}
+
+#av-overlay .error {
+	padding: 12px;
+	background-color: #ffebe8;
+	border: 1px solid #c00;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+}
+
+/* Minimum width of 400 pixels. */
+@media (min-width: @screen-sm-min) {
+	
+	#av-overlay {
+		position: relative;
+		top: auto;
+		left: auto;
+		width: 40%;
+		margin: 100px auto 0 auto;
+	}
+	
 }

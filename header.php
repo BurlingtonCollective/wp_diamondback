@@ -9,6 +9,7 @@
 	<meta property='og:url' content='http://diamondbackbeer.com/' />
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 	<meta name="author" content="Zachary Lincoln <zach@burlingtoncollective.com>">
+	<?php wp_head(); ?> 
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?= get_template_directory_uri(); ?>/css/master.css?<?= time ( void ); ?>">
 </head>
