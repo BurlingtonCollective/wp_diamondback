@@ -91,7 +91,7 @@ if (have_posts()) : while (have_posts()) : the_post();
 <?php
 endwhile; endif;
 ?>
-<section>
+<section id="home-media">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
