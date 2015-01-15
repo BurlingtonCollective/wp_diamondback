@@ -25,6 +25,7 @@ $eventsQuery = new WP_Query(array('post_type'=>'events', 'posts_per_page'=>3, 'o
 			$eventDate = types_render_field('date', array('format'=>'m/d/y'));
     	$tbdStatus = types_render_field('tbd', array('output'=>'raw'));
     	$dateString = ($tbdStatus || !$eventDate) ? 'TBD' : $eventDate;
+    	$eventImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
 			?>
 			<div class="col-xs-12 col-md-4">
 				<div class="panel panel-default event-panel">
@@ -32,7 +33,7 @@ $eventsQuery = new WP_Query(array('post_type'=>'events', 'posts_per_page'=>3, 'o
 						<h4 class="panel-title"><?php the_title(); ?> &middot; <?php echo $dateString; ?></h4>
 					</div>
 					<div class="panel-body">
-						<div class="event-image-wrapper" style="background-image: <?php echo (has_post_thumbnail()) ? 'url(\''.wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0].'\')' : ''; ?>">
+						<div class="event-image-wrapper" style="background-image: <?= (has_post_thumbnail()) ? 'url(\''.$eventImg[0].'\')' : ''; ?>">
 							<?php
 				    	if(!has_post_thumbnail()):
 				    	?>
