@@ -83,6 +83,14 @@ $(function(){
 
 	}
 
+	$('[href="#contact-modal"]').on('click', function(e){
+		e.preventDefault();
+		$('#contact-modal').modal('toggle');
+	});
+
+});
+
+$(window).load(function(){
 	var $eventPanels = $('.event-panel');
 
 	if($eventPanels.length > 0){
@@ -92,20 +100,16 @@ $(function(){
 
 			$.each($eventPanels, function(){
 				var $panelBody = $(this).find('.panel-body');
-				$panelBody.css('height', 'auto');
-				maxHeight = Math.max(maxHeight, $panelBody.height());
+				// $panelBody.css('height', 'auto');
+				console.log($panelBody.outerHeight());
+				maxHeight = Math.max(maxHeight, $panelBody.height() + (parseInt($panelBody.css('padding-top')) * 2));
 			});
 
-			$eventPanels.find('.panel-body').height(maxHeight);	
+			$eventPanels.find('.panel-body').css('height', maxHeight);	
 		}
 		
-		$('#event-callouts').imagesLoaded(setEventPanelHeight);
+		setEventPanelHeight();
+		$('#event-callouts').addClass('ready');
 		$(window).resize(setEventPanelHeight);
 	}
-
-	$('[href="#contact-modal"]').on('click', function(e){
-		e.preventDefault();
-		$('#contact-modal').modal('toggle');
-	});
-
 });
