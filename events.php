@@ -32,7 +32,7 @@ $eventsQuery = new WP_Query(array('post_type'=>'events', 'posts_per_page'=>3, 'o
 						<h4 class="panel-title"><?php the_title(); ?> &middot; <?php echo $dateString; ?></h4>
 					</div>
 					<div class="panel-body">
-						<div class="event-image-wrapper" style="background-image: <?= (has_post_thumbnail()) ? 'url(\''.wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0].'\')' : ''; ?>">
+						<div class="event-image-wrapper" style="background-image: <?php echo (has_post_thumbnail()) ? 'url(\''.wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0].'\')' : ''; ?>">
 							<?php
 				    	if(!has_post_thumbnail()):
 				    	?>
