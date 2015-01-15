@@ -1,3 +1,17 @@
+function setEventPanelHeight(){
+	var maxHeight = 0,
+			$eventPanels = $('.event-panel');
+
+	$.each($eventPanels, function(){
+		var $panelBody = $(this).find('.panel-body');
+		$panelBody.css('height', 'auto');
+		console.log($panelBody.outerHeight());
+		maxHeight = Math.max(maxHeight, $panelBody.height() + (parseInt($panelBody.css('padding-top')) * 2));
+	});
+
+	$eventPanels.find('.panel-body').css('height', maxHeight);	
+}
+
 $(function(){
 
 	function getUrlParameter(sParam){
@@ -46,8 +60,9 @@ $(function(){
 
 		var setBackstretch = function(){
 			var screenSize = window.getComputedStyle(document.body, ':after').getPropertyValue('content');
+			console.log(screenSize);
 			if($hero.data('backstretch')){
-				$.backstretch("destroy");
+				$hero.backstretch("destroy");
 			}
 			switch (screenSize){
 				case 'screen-lg':
@@ -59,19 +74,19 @@ $(function(){
 					break;
 				case 'screen-md':
 					$hero.backstretch([
-						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg',
-						'wp-content/themes/wp_diamondback/images/stock/arial-island.jpg',
-						'wp-content/themes/wp_diamondback/images/stock/under-dock.jpg'
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side-1200.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/arial-island-1200.jpg',
+						'wp-content/themes/wp_diamondback/images/stock/under-dock-1200.jpg'
 					], {fade: 500});
 					break;
 				case 'screen-sm':
 					$hero.backstretch([
-						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg'
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side-800.jpg'
 					]);
 					break;
 				case 'screen-xs':
 					$hero.backstretch([
-						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side.jpg'
+						'wp-content/themes/wp_diamondback/images/stock/gold-bridge-side-400-alt.jpg'
 					]);
 					break;
 				default:
@@ -80,7 +95,6 @@ $(function(){
 		}
 
 		setBackstretch();
-
 	}
 
 	$('[href="#contact-modal"]').on('click', function(e){
@@ -90,26 +104,13 @@ $(function(){
 
 });
 
+$(window).resize(setEventPanelHeight);
+
 $(window).load(function(){
 	var $eventPanels = $('.event-panel');
 
 	if($eventPanels.length > 0){
-
-		function setEventPanelHeight(){
-			var maxHeight = 0;
-
-			$.each($eventPanels, function(){
-				var $panelBody = $(this).find('.panel-body');
-				// $panelBody.css('height', 'auto');
-				console.log($panelBody.outerHeight());
-				maxHeight = Math.max(maxHeight, $panelBody.height() + (parseInt($panelBody.css('padding-top')) * 2));
-			});
-
-			$eventPanels.find('.panel-body').css('height', maxHeight);	
-		}
-		
 		setEventPanelHeight();
 		$('#event-callouts').addClass('ready');
-		$(window).resize(setEventPanelHeight);
 	}
 });
