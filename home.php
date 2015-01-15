@@ -150,7 +150,7 @@ endwhile; endif;
 					while($eventsQuery->have_posts()): $eventsQuery->the_post();
 					?>
 					<li class="media clearfix">
-				    <a class="pull-left" href="#">
+				    <a class="pull-left" href="<?php echo get_page_link( get_page_by_title( 'Upcoming Events' )->ID ); ?>">
 				    	<?php
 				    	if(has_post_thumbnail()):
 				    	?>
@@ -168,7 +168,8 @@ endwhile; endif;
 				    <div class="media-body">
 				    	<?php
 				    	$eventDate = types_render_field('date', array('format'=>'m/d/y'));
-				    	$dateString = $eventDate ? $eventDate : 'TBD';
+				    	$tbdStatus = types_render_field('tbd', array('output'=>'raw'));
+				    	$dateString = ($tbdStatus || !$eventDate) ? 'TBD' : $eventDate;
 				    	?>
 				      <h4 class="media-heading"><?php the_title(); ?> &middot; <?php echo $dateString; ?></h4>
 				      <div class="wysiwyg-content">
