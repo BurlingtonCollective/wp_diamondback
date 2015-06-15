@@ -4,8 +4,9 @@ Template Name: Home Page
 */
 get_header();
 if (have_posts()) : while (have_posts()) : the_post();
+$heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
 ?>
-<section id="home-hero">
+<section id="home-hero" style="background-image: url(<?= $heroImg[0]; ?>); background-size: cover; background-position: center center;">
 	<img id="hero-logo" class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png">
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">

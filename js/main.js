@@ -45,7 +45,7 @@ $(function(){
 			$hero.css({
 				height: $(window).height() + 'px'
 			});
-			setBackstretch();
+			// setBackstretch();
 		});
 		$window.scroll(function(){
 			if(!$body.is('.transitional')){
@@ -94,7 +94,7 @@ $(function(){
 			}
 		}
 
-		setBackstretch();
+		// setBackstretch();
 	}
 
 	$('[href="#contact-modal"]').on('click', function(e){
