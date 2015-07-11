@@ -70,12 +70,14 @@ $apiKey = 'AIzaSyBMrxH9664-3nIAV15f0Sd2H0xW0nCHF0Q';
 							map.setZoom(map.getZoom() - 1);
 						}
 						google.maps.event.addListener(marker, 'click', function() {
-							infoWindow.open(map.marker);
+							console.log('yo');
+							infoWindow.setContent(locationName);
+							infoWindow.open(map, marker);
 						});
 					} else {
 						console.log('somethings up');
 					}
-				})
+				});
 			}
 
 			google.maps.event.addDomListener(window, 'load', init);
@@ -95,10 +97,16 @@ $apiKey = 'AIzaSyBMrxH9664-3nIAV15f0Sd2H0xW0nCHF0Q';
 				$geoTarget = $address . ' ' . $town . ', ' . $state;
 				?>
 				<div class="col-xs-12 col-sm-4 col-md-3">
-					<div class=""
-					<b style="display: block;"><?= $name; ?></b>
-					<span style="display: block;"><?= $address; ?></span>
-					<span><?= $town . ', ' . $state; ?></span>
+					<div class="media">
+						<div class="media-left">
+							<i class="glyphicon glyphicon-map-marker" style="font-size: 32px;"></i>
+						</div>
+						<div class="media-body">
+							<span class="media-heading" style="display: block; font-weight: bold;"><?= $name; ?></span>
+							<span style="display: block;"><?= $address; ?></span>
+							<span style="display: block;"><?= $town . ', ' . $state; ?></span>
+						</div>
+					</div>
 					<script type="text/javascript">
 						markers.push({
 							name: "<?= $name; ?>",
