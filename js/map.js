@@ -26,7 +26,8 @@ function loadMarkers() {
           $element.data('latitude'),
           $element.data('longitude')
         ),
-        placeId = $element.data('place');
+        placeId = $element.data('place'),
+        purchaseType = $element.data('purchase-type');
 
     marker = new google.maps.Marker({
       map: map,
@@ -37,7 +38,7 @@ function loadMarkers() {
     $element.data('marker', marker);
 
     handleBounds(marker);
-    bindInfoWindow(marker, placeId);
+    bindInfoWindow(marker, placeId, purchaseType);
   });
 }
 
@@ -52,23 +53,36 @@ function handleBounds(marker) {
   }
 }
 
-function bindInfoWindow(marker, placeId) {
-  service.getDetails({placeId: placeId}, function(place, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      google.maps.event.addListener(marker, 'click', function() {
-        var isOpen = place.open_now,
-            status = isOpen ? '<span style="color: green;">Open</span>' : '<span style="color: red;">Closed</span>',
-            link = '<small style="display: block;"><a href="'+place.url+'" target="_blank">More Information</a></small>';
-        infoWindow.setContent('<h4>'+marker.getTitle()+'</h4>' + status + link);
-        infoWindow.open(map, marker);
-      });
-    } else {
-      google.maps.event.addListener(marker, 'click', function() {
-        infoWindow.setContent('<h4>'+marker.getTitle()+'</h4>');
-        infoWindow.open(map, marker);
-      });
-    }
-  });
+function bindInfoWindow(marker, placeId, purchaseType) {
+  if (placeId) {
+    service.getDetails({placeId: placeId}, function(place, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        google.maps.event.addListener(marker, 'click', function() {
+          var title = '<h4>'+marker.getTitle()+'</h4>',
+              type = '<h5>' + purchaseType + '</h5>',
+              isOpen = place.open_now,
+              status = isOpen ? '<span style="color: green;">Open</span>' : '<span style="color: red;">Closed</span>',
+              link = '<small style="display: block;"><a href="'+place.url+'" target="_blank">More Information</a></small>';
+          infoWindow.setContent(title + type + status + link);
+          infoWindow.open(map, marker);
+        });
+      } else {
+        google.maps.event.addListener(marker, 'click', function() {
+          var title = '<h4>'+marker.getTitle()+'</h4>',
+              type = '<h5>' + purchaseType + '</h5>';
+          infoWindow.setContent(title + type);
+          infoWindow.open(map, marker);
+        });
+      }
+    });
+  } else {
+    google.maps.event.addListener(marker, 'click', function() {
+      var title = '<h4>'+marker.getTitle()+'</h4>',
+          type = '<h5>' + purchaseType + '</h5>';
+      infoWindow.setContent(title + type);
+      infoWindow.open(map, marker);
+    });
+  }
 }
 
 google.maps.event.addDomListener(window, 'resize', init);
@@ -80,16 +94,8 @@ $(function() {
     init();
 
     $('.location').on('click touchend', function() {
-      var offset = $('#map').offset().top = $(window).scrollTop(),
-          marker = $(this).data('marker');
-
-      if (offset > window.innerHeight) {
-        $('html, body').animate({scrollTop: offset}, 800, function() {
-          google.maps.event.trigger(marker, 'click');
-        });
-      } else {
-        google.maps.event.trigger(marker, 'click');
-      }
+      $('html, body').animate({scrollTop: 0}, 800);
+      google.maps.event.trigger(marker, 'click');
     });
   }
 });

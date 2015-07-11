@@ -6,6 +6,7 @@ register_nav_menus(array(
 ));
 
 // function to geocode address, it will return false if unable to geocode address
+// https://www.codeofaninja.com/2014/06/google-maps-geocoding-example-php.html
 function geocode($address)
 {
   // url encode the address
@@ -60,6 +61,7 @@ function geocode($address)
   }
 }
 
+// http://codex.wordpress.org/Plugin_API/Action_Reference/save_post
 function save_location_lat_long($post_id, $post, $update)
 {
   $slug = 'location';
