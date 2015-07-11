@@ -5,6 +5,87 @@ register_nav_menus(array(
   'nav_right' => __('Right Nav Menu', 'WP_DIAMONDBACK')
 ));
 
+// function to geocode address, it will return false if unable to geocode address
+function geocode($address)
+{
+  // url encode the address
+  $address = urlencode($address);
+   
+  // google map geocode api url
+  $url = "http://maps.google.com/maps/api/geocode/json?sensor=false&address={$address}";
+
+  // get the json response
+  $resp_json = file_get_contents($url);
+   
+  // decode the json
+  $resp = json_decode($resp_json, true);
+
+  // echo '<pre>',
+  // print_r($resp);
+  // exit;
+
+  // response status will be 'OK', if able to geocode given address 
+  if($resp['status']=='OK'){
+
+    // echo 'here';
+    // exit;
+
+    // get the important data
+    $lat = $resp['results'][0]['geometry']['location']['lat'];
+    $long = $resp['results'][0]['geometry']['location']['lng'];
+    $formattedAddress = $resp['results'][0]['formatted_address'];
+    $placeId = $resp['results'][0]['place_id'];
+     
+    // verify if data is complete
+    if($lat && $long && $formattedAddress){
+      // put the data in the array
+      $data_arr = array();
+       
+      array_push(
+        $data_arr, 
+          $lat, 
+          $long, 
+          $formattedAddress,
+          $placeId
+      );
+       
+      return $data_arr;
+         
+    }else{
+      return false;
+    }
+       
+  }else{
+    return false;
+  }
+}
+
+function save_location_lat_long($post_id, $post, $update)
+{
+  $slug = 'location';
+
+  if ($slug != $post->post_type) {
+    return;
+  }
+
+  if (isset($_REQUEST['wpcf']['location-address']) && isset($_REQUEST['wpcf']['location-town']) && isset($_REQUEST['wpcf']['location-state'])) {
+    $address = $_REQUEST['wpcf']['location-address'];
+    $town = $_REQUEST['wpcf']['location-town'];
+    $state = $_REQUEST['wpcf']['location-state'];
+
+    $geocodeResult = geocode($address . ', ' . $town . ', ' . $state);
+
+    if ($geocodeResult != false) {
+      update_post_meta($post_id, 'location-lat', $geocodeResult[0]);
+      update_post_meta($post_id, 'location-long', $geocodeResult[1]);
+      update_post_meta($post_id, 'location-formatted', $geocodeResult[2]);
+      update_post_meta($post_id, 'location-place-id', $geocodeResult[3]);
+    }
+  }
+}
+
+add_action('save_post', 'save_location_lat_long', 10, 3);
+
 
 /**
  * Class Name: wp_bootstrap_navwalker

@@ -38,7 +38,6 @@ $(function(){
 
 		$hero.css({
 			height: ($(window).height()) + 'px'
-			// height: ($(window).height() + 134) + 'px'
 		});
 		
 		$window.on('resize', function(){
@@ -65,13 +64,12 @@ $(function(){
 
 });
 
-$(window).resize(setEventPanelHeight);
-
 $(window).load(function(){
 	var $eventPanels = $('.event-panel');
 
 	if($eventPanels.length > 0){
 		setEventPanelHeight();
 		$('#event-callouts').addClass('ready');
+		$(window).resize(setEventPanelHeight);
 	}
 });

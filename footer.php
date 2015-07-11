@@ -44,9 +44,9 @@
 
 	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/bower_components/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/bower_components/jquery-backstretch/jquery.backstretch.min.js"></script>
 	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/js/main.js"></script>
+	<script type="text/javascript" src="<?= get_template_directory_uri(); ?>/js/map.js"></script>
 
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
