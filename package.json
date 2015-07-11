@@ -1,0 +1,25 @@
+{
+  "name": "wp_diamondback",
+  "version": "1.0.0",
+  "description": "wp_diamondback ==============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BurlingtonCollective/wp_diamondback.git"
+  },
+  "author": "Zachary Lincoln (Burlington Collective)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BurlingtonCollective/wp_diamondback/issues"
+  },
+  "homepage": "https://github.com/BurlingtonCollective/wp_diamondback",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
