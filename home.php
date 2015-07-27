@@ -23,32 +23,32 @@ $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')
 				</button>
 			</div>
 			<div class="collapse navbar-collapse" id="hero-nav">
-				<?php
-		    	wp_nav_menu(array(
-		    		'menu' => 'nav_left',
-		    		'theme_location' => 'nav_left',
-		    		'depth' => 2,
-		    		'container' => 'div',
-		    		'container_class' => '',
-		    		'container_id' => 'home-nav-left',
-		    		'menu_class' => 'nav navbar-nav',
-		    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-		    		'walker' => new wp_bootstrap_navwalker()
-		    	));
-		    ?>
-		    <?php
-		    	wp_nav_menu(array(
-		    		'menu' => 'nav_right',
-		    		'theme_location' => 'nav_right',
-		    		'depth' => 2,
-		    		'container' => 'div',
-		    		'container_class' => '',
-		    		'container_id' => 'home-nav-right',
-		    		'menu_class' => 'nav navbar-nav',
-		    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-		    		'walker' => new wp_bootstrap_navwalker()
-		    	));
-		    ?>
+				<div class="row">
+					<?php
+			    	wp_nav_menu(array(
+			    		'menu' => 'nav_left',
+			    		'theme_location' => 'nav_left',
+			    		'depth' => 2,
+			    		'container' => 'div',
+			    		'container_class' => 'col-xs-6',
+			    		'container_id' => 'home-nav-left',
+			    		'menu_class' => 'nav navbar-nav nav-justified',
+			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			    		'walker' => new wp_bootstrap_navwalker()
+			    	));?>
+				    <?php
+			    	wp_nav_menu(array(
+			    		'menu' => 'nav_right',
+			    		'theme_location' => 'nav_right',
+			    		'depth' => 2,
+			    		'container' => 'div',
+			    		'container_class' => 'col-xs-6',
+			    		'container_id' => 'home-nav-right',
+			    		'menu_class' => 'nav navbar-nav nav-justified',
+			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+			    		'walker' => new wp_bootstrap_navwalker()
+			    	));?>
+				</div>
 			</div>
 		</div>
 	</nav>
