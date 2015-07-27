@@ -94,8 +94,10 @@ $(function() {
     init();
 
     $('.location').on('click touchend', function() {
-      $('html, body').animate({scrollTop: 0}, 800);
-      google.maps.event.trigger(marker, 'click');
+      var marker = $(this).data('marker');
+      $('html, body').animate({scrollTop: 0}, 800, function() {
+        google.maps.event.trigger(marker, 'click');
+      });
     });
   }
 });
