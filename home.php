@@ -8,6 +8,10 @@ $heroImg = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')
 ?>
 <section id="home-hero" style="background-image: url(<?= $heroImg[0]; ?>);">
 	<img id="hero-logo" class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png">
+	<div id="scroll">
+		<span>Scroll</span>
+		<img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/scroll.png">
+	</div>
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
