@@ -24,36 +24,37 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="<?= get_site_url(); ?>"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
+					<a class="navbar-brand visible-xs visible-sm" href="<?= get_site_url(); ?>"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
 					<span class="navbar-text navbar-left visible-xs visible-sm">Diamondback Beer</span>
 				</div>
 				<div class="collapse navbar-collapse" id="top-nav">
-					<?php
-			    	wp_nav_menu(array(
-			    		'menu' => 'nav_left',
-			    		'theme_location' => 'nav_left',
-			    		'depth' => 2,
-			    		'container' => 'div',
-			    		'container_class' => '',
-			    		'container_id' => 'nav-left',
-			    		'menu_class' => 'nav navbar-nav navbar-left',
-			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			    		'walker' => new wp_bootstrap_navwalker()
-			    	));
-			    ?>
-			    <?php
-			    	wp_nav_menu(array(
-			    		'menu' => 'nav_right',
-			    		'theme_location' => 'nav_right',
-			    		'depth' => 2,
-			    		'container' => 'div',
-			    		'container_class' => '',
-			    		'container_id' => 'nav-right',
-			    		'menu_class' => 'nav navbar-nav navbar-right',
-			    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-			    		'walker' => new wp_bootstrap_navwalker()
-			    	));
-			    ?>
+					<a class="navbar-brand visible-md visible-lg" href="<?= get_site_url(); ?>"><img class="img-responsive" src="<?= get_template_directory_uri(); ?>/images/logo-full.png"></a>
+					<div class="row">
+						<?php
+				    	wp_nav_menu(array(
+				    		'menu' => 'nav_left',
+				    		'theme_location' => 'nav_left',
+				    		'depth' => 2,
+				    		'container' => 'div',
+				    		'container_class' => 'col-xs-6',
+				    		'container_id' => 'home-nav-left',
+				    		'menu_class' => 'nav navbar-nav nav-justified',
+				    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+				    		'walker' => new wp_bootstrap_navwalker()
+				    	));?>
+					    <?php
+				    	wp_nav_menu(array(
+				    		'menu' => 'nav_right',
+				    		'theme_location' => 'nav_right',
+				    		'depth' => 2,
+				    		'container' => 'div',
+				    		'container_class' => 'col-xs-6',
+				    		'container_id' => 'home-nav-right',
+				    		'menu_class' => 'nav navbar-nav nav-justified',
+				    		'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+				    		'walker' => new wp_bootstrap_navwalker()
+				    	));?>
+					</div>
 				</div>
 			</div>
 		</nav>

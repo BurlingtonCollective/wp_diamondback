@@ -93,7 +93,7 @@ html{
 			background-color: @yellow-highlight;
 		}
 		&:focus, &:hover{
-			background-color: @melon;
+			background-color: fade(@yellow-highlight, 30%);
 		}
 	}
 }
@@ -105,10 +105,11 @@ header{
 				position: absolute;
 				top: 0px;
 				left: 50%;
-				margin-left: -75px;
+				.translate(-50%, 0);
 				max-width: 150px;
 				height: auto;
 				float: none;
+				margin: 0px;
 				padding: 0;
 				outline: none;
 			}
@@ -121,7 +122,6 @@ header{
 			}
 			& > .container a.navbar-brand{
 				padding: 0;
-				margin-left: 7.5px;
 				img{
 					max-height: 100%;
 				}
@@ -134,11 +134,13 @@ header{
 	#top-nav{
 		@media(min-width: @grid-float-breakpoint){
 			.navbar-nav{
-				width: 50%;
+				// width: 50%;
+				float: none;
 				.box-sizing(border-box);
 				margin: 0;
 				& > li{
-					width: 50%;
+					// width: 50%;
+					float: none;
 					a{
 						text-align: center;
 						padding: 30px 15px;
@@ -146,11 +148,22 @@ header{
 					}
 				}
 			}
-			.navbar-left{
-				padding-right: 100px;
+
+			#home-nav-left {
+				padding-right: 0;
 			}
-			.navbar-right{
-				padding-left: 100px;
+
+			#home-nav-right {
+				padding-left: 0;
+			}
+
+			@menu-padding: 15%;
+
+			#menu-left-nav{
+				padding-right: @menu-padding;
+			}
+			#menu-right-nav{
+				padding-left: @menu-padding;
 			}
 		}
 		@media(max-width: @grid-float-breakpoint-max){
